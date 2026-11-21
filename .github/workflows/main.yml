@@ -1,0 +1,16 @@
+name: First GitHub Actions Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print repository variable
+        run: echo "Message: ${{ vars.GREETING_MESSAGE }}"
